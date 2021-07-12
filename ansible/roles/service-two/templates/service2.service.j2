@@ -1,0 +1,11 @@
+[Unit]
+Description=Service-Two
+
+[Service]
+Type=simple
+User=root
+ExecStart={{ java_path }} -Xmx256m -Xss32m -Djava.security.egd=file:/dev/urandom -jar {{ jar_path }}
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
