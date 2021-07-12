@@ -1,9 +1,0 @@
----
-- name: 'Install Java & Maven'
-  include_tasks: 'common.yml'
-
-- name: 'Install Git & Clone repo'
-  include_tasks: 'git.yml'
-
-- name: 'Create service'
-  include_tasks: 'service.yml'

@@ -1,6 +1,0 @@
----
-
-- name: 'Restart service'
-  service:
-    name: 'service2'
-    state: 'restarted'
