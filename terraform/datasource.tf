@@ -4,3 +4,10 @@ data "aws_security_group" "epam-sg" {
     values = ["bogart-security"]
   }
 }
+
+data "aws_vpc" "epam-vpc"{
+  filter {
+    name   = "tag:Name"
+    values = ["epam-vpc"]
+  }
+}

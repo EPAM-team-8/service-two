@@ -17,4 +17,7 @@ resource "null_resource" "ansible_automation" {
   provisioner "local-exec" {
     command = "sleep 60; ansible-galaxy install -p ../ansible/roles -r ../ansible/requirements.yml --force && cd ../ansible && ansible-playbook --vault-password-file /home/arsen/vault -i aws_ec2.yml service-two.yml"
   }
+  depends_on = [
+    aws_instance.Service-Two
+  ]
 }
