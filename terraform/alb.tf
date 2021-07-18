@@ -6,9 +6,9 @@ resource "aws_lb" "service-two-alb" {
   load_balancer_type = "application"
 
   security_groups = [
-    data.aws_security_group.epam-sg.id
+    data.aws_security_group.sg.id
   ]
-  subnets = data.aws_subnet_ids.main-subnets.ids
+  subnets = [data.aws_subnet.public_subnet.id, data.aws_subnet.private_subnet.id]
 }
 
 # ALB Listener
@@ -39,7 +39,7 @@ resource "aws_lb_target_group" "service-two-tg" {
   name     = "service-two-tg"
   port     = "80"
   protocol = "HTTP"
-  vpc_id   = data.aws_vpc.epam-vpc.id
+  vpc_id   = data.aws_vpc.my-vpc.id
 
   health_check {
     path    = "/"
