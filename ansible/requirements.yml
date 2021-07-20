@@ -2,4 +2,4 @@
 
 - src: 'https://github.com/EPAM-team-8/ansible-role-service-two.git'
   name: service-two
-  version: 'develop'
+  version: 'v1.0.0'
